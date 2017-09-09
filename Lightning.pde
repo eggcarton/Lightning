@@ -1,30 +1,112 @@
-void setup()
-{  
+PImage DiscoBall;
+int startX = width/2;
+int startY = 150;
+int endX = width/2;
+int endY = 150; 
+
+int startX2 = width/2;
+int startY2 = 150;
+int endX2 = width/2;
+int endY2 = 150; 
+
+int startX3 = width/2;
+int startY3 = 150;
+int endX3 = width/2;
+int endY3 = 150;
+
+int startX4 = width/2-20;
+int startY4 = 150;
+int endX4 = width/2-20;
+int endY4 = 150;
+
+int flash = 0;
+
+void setup(){  
+  String url = "https://i.imgur.com/gCLrTIG.gif";
+  DiscoBall = loadImage(url, "png");
   size(1600,1200);
-  strokeWeight(2);
+  strokeWeight(2); 
   background(0);
 }
 
-int startX = 750;
-int startY = 0;
-int endX = 750;
-int endY = 0; 
-
 void draw(){
+  System.out.println(flash);
  while(endY <= 1200 ){
-    stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));      
-    endX = startX + (int)(Math.random()*1600)-800;
-    endY = startY + (int)(Math.random()*1200)-600 ;
+    stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
+    endX = startX + (int)(Math.random()*40);
+    endY = startY + (int)(Math.random()*100)-9;
     line(startX,startY,endX,endY);
     startX = endX;
     startY = endY;
-    }
+  } 
+
+  while(endY2 <= 1200 ){
+    stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
+    endX2 = startX2 + (int)(Math.random()*40)-40;
+    endY2 = startY2 + (int)(Math.random()*100)-9;
+    line(startX2,startY2,endX2,endY2);
+    startX2 = endX2;
+    startY2 = endY2;
+  } 
+    
+  while(endY3 <= 1200 ){
+    stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
+    endX3 = startX3 + (int)(Math.random()-40);
+    endY3 = startY3 + (int)(Math.random()*100)-9;
+    line(startX3,startY3,endX3,endY3);
+    startX3 = endX3;
+    startY3 = endY3;
+  } 
+  
+  while(endY4 <= 1200){
+    stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
+    endX4 = startX4 + (int)(Math.random()*30)+30;
+    endY4 = startY4 + (int)(Math.random()*100);
+    line(startX4,startY4,endX4,endY4);
+    startX4 = endX4;
+    startY4 = endY4;
+  } 
+    
+  if (flash == 0){
+    background(0,0,0,0.2);
+  }
+  else if (flash > 10){
+    flash = 0;  
+  }
+  image(DiscoBall, width/2-150,0);
 }
-void mousePressed()
-{
-startX = 750;
-startY = 0;
-endX =750;
-endY = 0; 
+
+void mousePressed(){
+startX = width/2;
+startY = 150;
+endX = width/2;
+endY = 150; 
+
+startX2 = width/2;
+startY2 = 150;
+endX2 = width/2;
+endY2 = 150;
+
+startX3 = width/2;
+startY3 = 150;
+endX3 = width/2;
+endY3 = 150;
+
+startX4 = width/2-20;
+startY4 = 150;
+endX4 = width/2-20;
+endY4 = 150;
+
+flash = flash + 1;
+ /* if(flash > 10){
+    flash = 1;
+    }
+ else if(flash == 10){
+    background(0,0,0,0.2);
+    }
+ else{
+    
+    } 
+    */
 redraw();
 }

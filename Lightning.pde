@@ -98,15 +98,5 @@ endX4 = width/2-20;
 endY4 = 150;
 
 flash = flash + 1;
- /* if(flash > 10){
-    flash = 1;
-    }
- else if(flash == 10){
-    background(0,0,0,0.2);
-    }
- else{
-    
-    } 
-    */
 redraw();
 }

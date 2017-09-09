@@ -22,16 +22,17 @@ int endY4 = 150;
 int flash = 0;
 
 void setup(){  
-  String url = "https://i.imgur.com/gCLrTIG.gif";
-  DiscoBall = loadImage(url, "png");
-  size(1600,1200);
+  /* String url = "https://i.imgur.com/gCLrTIG.gif";
+  DiscoBall = loadImage(url, "gif"); */
+  DiscoBall = loadImage("discoBall.gif");
+  size(1000,750);
   strokeWeight(2); 
   background(0);
 }
 
 void draw(){
   System.out.println(flash);
- while(endY <= 1200 ){
+ while(endY <= 750 ){
     stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
     endX = startX + (int)(Math.random()*40);
     endY = startY + (int)(Math.random()*100)-9;
@@ -40,7 +41,7 @@ void draw(){
     startY = endY;
   } 
 
-  while(endY2 <= 1200 ){
+  while(endY2 <= 750 ){
     stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
     endX2 = startX2 + (int)(Math.random()*40)-40;
     endY2 = startY2 + (int)(Math.random()*100)-9;
@@ -49,7 +50,7 @@ void draw(){
     startY2 = endY2;
   } 
     
-  while(endY3 <= 1200 ){
+  while(endY3 <= 750 ){
     stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
     endX3 = startX3 + (int)(Math.random()-40);
     endY3 = startY3 + (int)(Math.random()*100)-9;
@@ -58,7 +59,7 @@ void draw(){
     startY3 = endY3;
   } 
   
-  while(endY4 <= 1200){
+  while(endY4 <= 750){
     stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
     endX4 = startX4 + (int)(Math.random()*30)+30;
     endY4 = startY4 + (int)(Math.random()*100);
@@ -98,15 +99,5 @@ endX4 = width/2-20;
 endY4 = 150;
 
 flash = flash + 1;
- /* if(flash > 10){
-    flash = 1;
-    }
- else if(flash == 10){
-    background(0,0,0,0.2);
-    }
- else{
-    
-    } 
-    */
 redraw();
 }

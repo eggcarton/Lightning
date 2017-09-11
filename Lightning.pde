@@ -22,9 +22,10 @@ int endY4 = 150;
 int flash = 0;
 
 void setup(){  
-  /* String url = "https://i.imgur.com/gCLrTIG.gif";
-  DiscoBall = loadImage(url, "gif"); */
-  DiscoBall = loadImage("discoBall.gif");
+  //String url = "https://openclipart.org/image/2400px/svg_to_png/251881/Glimmering-Disco-Ball-No-Background.png";
+  //DiscoBall = loadImage(url, "png");
+  DiscoBall = loadImage("discoBall.png");
+  //frameRate=(0.2083);
   size(1000,750);
   strokeWeight(2); 
   background(0);
@@ -66,15 +67,21 @@ void draw(){
     line(startX4,startY4,endX4,endY4);
     startX4 = endX4;
     startY4 = endY4;
-  } 
+  }
     
   if (flash == 0){
-    background(0,0,0,0.2);
+    background(0,0.2);
   }
   else if (flash > 10){
     flash = 0;  
   }
-  image(DiscoBall, width/2-150,0);
+  
+  noStroke();
+  fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+  ellipse(width/2,150,300,300);
+  
+  DiscoBall.resize(300,300);
+  image(DiscoBall, width/2-150,0.02);
 }
 
 void mousePressed(){

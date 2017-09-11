@@ -32,7 +32,6 @@ void setup(){
 }
 
 void draw(){
-  System.out.println(flash);
  while(endY <= 750 ){
     stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));     
     endX = startX + (int)(Math.random()*40);

@@ -25,7 +25,7 @@ void setup(){
   //String url = "https://openclipart.org/image/2400px/svg_to_png/251881/Glimmering-Disco-Ball-No-Background.png";
   //DiscoBall = loadImage(url, "png");
   DiscoBall = loadImage("discoBall.png");
-  //frameRate=(0.2083);
+  frameRate=(0.2083);
   size(1000,750);
   strokeWeight(2); 
   background(0);
